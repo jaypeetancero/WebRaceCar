@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/WebRaceCar/static/css/main.2d5b2c7d.chunk.css",
-    "main.js": "/WebRaceCar/static/js/main.41bd0de2.chunk.js",
-    "main.js.map": "/WebRaceCar/static/js/main.41bd0de2.chunk.js.map",
+    "main.js": "/WebRaceCar/static/js/main.1b1cb91d.chunk.js",
+    "main.js.map": "/WebRaceCar/static/js/main.1b1cb91d.chunk.js.map",
     "runtime-main.js": "/WebRaceCar/static/js/runtime-main.8d1a0ab8.js",
     "runtime-main.js.map": "/WebRaceCar/static/js/runtime-main.8d1a0ab8.js.map",
-    "static/js/2.fb0eee0d.chunk.js": "/WebRaceCar/static/js/2.fb0eee0d.chunk.js",
-    "static/js/2.fb0eee0d.chunk.js.map": "/WebRaceCar/static/js/2.fb0eee0d.chunk.js.map",
+    "static/js/2.31b98edb.chunk.js": "/WebRaceCar/static/js/2.31b98edb.chunk.js",
+    "static/js/2.31b98edb.chunk.js.map": "/WebRaceCar/static/js/2.31b98edb.chunk.js.map",
     "index.html": "/WebRaceCar/index.html",
-    "precache-manifest.609d5b2f5799d3f87113b13d36043941.js": "/WebRaceCar/precache-manifest.609d5b2f5799d3f87113b13d36043941.js",
+    "precache-manifest.952a375ef16c762cdc6ad01e9ebb62cd.js": "/WebRaceCar/precache-manifest.952a375ef16c762cdc6ad01e9ebb62cd.js",
     "service-worker.js": "/WebRaceCar/service-worker.js",
     "static/css/main.2d5b2c7d.chunk.css.map": "/WebRaceCar/static/css/main.2d5b2c7d.chunk.css.map",
-    "static/js/2.fb0eee0d.chunk.js.LICENSE.txt": "/WebRaceCar/static/js/2.fb0eee0d.chunk.js.LICENSE.txt"
+    "static/js/2.31b98edb.chunk.js.LICENSE.txt": "/WebRaceCar/static/js/2.31b98edb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8d1a0ab8.js",
-    "static/js/2.fb0eee0d.chunk.js",
+    "static/js/2.31b98edb.chunk.js",
     "static/css/main.2d5b2c7d.chunk.css",
-    "static/js/main.41bd0de2.chunk.js"
+    "static/js/main.1b1cb91d.chunk.js"
   ]
 }
