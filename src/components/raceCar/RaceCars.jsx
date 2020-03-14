@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import RaceCarContainer from './RaceCarContainer';
 import RaceCarsTable from './RaceCarsTable';
+import firebase from '../../config/FirebaseConfig';
 
 let RaceCars = props => {
 
@@ -13,30 +14,62 @@ let RaceCars = props => {
     let [counter, setCounter] = useState(0);
     let [raceCar, setRaceCar] = useState(RACE_CAR_INITIAL_STATE)
     let [toggleForm, setToggleForm] = useState(false);
+    let [database, setDatabase] = useState(firebase.firestore());
+    let [isLoadingList, setLoadingList] = useState(false);
 
-    const addCarToList = values => {
-        //I will add the function add car here for the meantime since I don't have a backend but I commonly put the add api to the Container of the module not in the list
-        if(values && !values.id){
-            values.id = values.firstName + values.lastName + counter;
-            values.bibNumber = generateCarBibNumber();
-            setRaceCars(oldArray => [...oldArray, values]);
-            setToggleForm(false);
-            setRaceCar(RACE_CAR_INITIAL_STATE)
-        } else {
-            let tempList = [...raceCars];
-            let carIndex = raceCars.findIndex(raceCar => raceCar.id === values.id);
-            tempList[carIndex] = values;
-            setRaceCars(tempList);
-            setToggleForm(false);
-            setRaceCar(RACE_CAR_INITIAL_STATE)
-        }
+    useEffect(()=>{
+        getAllRaceCarsFromDB();
+    },[])
+
+    const getAllRaceCarsFromDB = () => {
+        setRaceCars([]);
+        setLoadingList(true)
+        database.collection('raceCars').get()
+        .then(querySnapShot => {
+            querySnapShot.forEach(doc => {
+                let data = doc.data();
+                data.docId = doc.id;
+                setRaceCars(oldList => [...oldList, data])
+            })
+            setLoadingList(false)
+        })
     }
 
-    const deleteCar = id => {
-        let tempList = [...raceCars];
-        let carIndex = raceCars.findIndex(raceCar => raceCar.id === id);
-        tempList.splice(carIndex, 1);
-        setRaceCars(tempList);
+    console.log(raceCars)
+
+    const getCounterFromDB = async () => {
+        await database.collection('counter')
+        .doc("AznLkk4ak9pF0wtKJRk4")
+        .get()
+        .then(querySnapShot => {
+            setCounter(querySnapShot.data());
+        })
+    }
+
+    const addCarToList = async values => {
+        await getCounterFromDB();
+        database.settings({
+            timestampsInSnapshots: true
+        });
+        
+        if(values && !values.id){
+            database.collection('raceCars').add({
+                id : (values.firstName + values.lastName + counter).replace(/\s/g, ''),
+                bibNumber : values.bibNumber = generateCarBibNumber(),
+                firstName : values.firstName,
+                lastName : values.lastName,
+            }); 
+        } else {
+            database.collection('raceCars').doc(values.docId).set(values);
+        }
+        setToggleForm(false);
+        getAllRaceCarsFromDB();
+        setRaceCar(RACE_CAR_INITIAL_STATE)
+    }
+
+    const deleteCar = async docId => {
+        await database.collection('raceCars').doc(docId).delete();
+        await getAllRaceCarsFromDB();
         setToggleForm(false);
         setRaceCar(RACE_CAR_INITIAL_STATE)
     }
@@ -62,6 +95,7 @@ let RaceCars = props => {
                 toggleForm={setToggleForm}/> 
                 : 
                 <RaceCarsTable 
+                isLoading={isLoadingList}
                 toggleForm={()=>{
                     setToggleForm(true);
                     setRaceCar(RACE_CAR_INITIAL_STATE)

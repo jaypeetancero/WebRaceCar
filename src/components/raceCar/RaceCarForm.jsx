@@ -78,7 +78,7 @@ let RaceCarForm = props => {
                         </div>
                         {formValues && formValues.id &&
                         <div className="col">
-                            <button className="btn btn-warning form-control" type="button" onClick={()=>deleteCar(formValues.id)}>Delete</button>
+                            <button className="btn btn-warning form-control" type="button" onClick={()=>deleteCar(formValues.docId)}>Delete</button>
                         </div>
                         }
                     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 let RaceCarsTable = props => {
 
-    const {toggleForm, getTableData, raceCars} = props;
+    const {toggleForm, getTableData, raceCars, isLoading} = props;
 
     return(
         <div className="container-fluid animated fadeIn">
@@ -26,32 +26,40 @@ let RaceCarsTable = props => {
                 </thead>
                 <tbody>
                     {
-                        raceCars.length > 0 ?
-                            raceCars.map(raceCar => {
-                                return(
-                                    <tr role="row" key={raceCar.bibNumber}>
-                                        <th scope="row">
-                                            <p>{raceCar.id}</p>
-                                        </th>
-                                        <td>
-                                            <p>{raceCar.bibNumber}</p>
-                                        </td>
-                                        <td>
-                                            <p>{raceCar.firstName}</p>
-                                        </td>
-                                        <td>
-                                            <p>{raceCar.lastName}</p>
-                                        </td>
-                                        <td className="row">
-                                            <button type="button" className="btn btn-info btn-sm" onClick={()=>getTableData(raceCar)}>View info</button>
-                                        </td>
-                                    </tr>
-                                )
-                            })
-                        :
-                           <tr role="row">
-                               <td className="v-align-middle text-center" colSpan="5">No record found</td>
-                           </tr> 
+                        !isLoading ?
+                            raceCars.length > 0 ?
+                                raceCars.map((raceCar, index) => {
+                                    return(
+                                        <tr role="row" key={index}>
+                                            <th scope="row">
+                                                <p>{raceCar.id}</p>
+                                            </th>
+                                            <td>
+                                                <p>{raceCar.bibNumber}</p>
+                                            </td>
+                                            <td>
+                                                <p>{raceCar.firstName}</p>
+                                            </td>
+                                            <td>
+                                                <p>{raceCar.lastName}</p>
+                                            </td>
+                                            <td className="row">
+                                                <button type="button" className="btn btn-info btn-sm" onClick={()=>getTableData(raceCar)}>View info</button>
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                            :
+                            <tr role="row">
+                                <td className="v-align-middle text-center" colSpan="5">No record found</td>
+                            </tr> 
+                        : 
+                        <tr role="row">
+                            <td className="v-align-middle text-center" colSpan="5">
+                                <div className="spinner-border" role="status"></div>
+                                <p>Loading</p>
+                            </td>
+                        </tr>
                     }
                 </tbody>
             </table>
