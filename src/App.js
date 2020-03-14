@@ -15,7 +15,9 @@ function App() {
     },{
       path : '/raceCars',
       component : RaceCars
-    }
+    },{
+      path : '/WebRaceCar',
+      component : RaceCars
   ]
 
   const routeComponents = routes.map((route, key) => <Route exact path={route.path} component={route.component} key={key}/>)
