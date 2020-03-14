@@ -18,7 +18,11 @@ let RaceCars = props => {
     let [isLoadingList, setLoadingList] = useState(false);
 
     useEffect(()=>{
+        getCounterFromDB();
         getAllRaceCarsFromDB();
+        database.settings({
+            timestampsInSnapshots: true
+        });
     },[])
 
     const getAllRaceCarsFromDB = () => {
@@ -35,27 +39,24 @@ let RaceCars = props => {
         })
     }
 
-    console.log(raceCars)
-
     const getCounterFromDB = async () => {
+        let counter = 0;
         await database.collection('counter')
         .doc("AznLkk4ak9pF0wtKJRk4")
         .get()
         .then(querySnapShot => {
-            setCounter(querySnapShot.data());
+            counter = querySnapShot.data().counter;
+            setCounter(counter);
         })
+        return counter
     }
 
     const addCarToList = async values => {
         await getCounterFromDB();
-        database.settings({
-            timestampsInSnapshots: true
-        });
-        
         if(values && !values.id){
             database.collection('raceCars').add({
+                bibNumber : await generateCarBibNumber(),
                 id : values.firstName.replace(/\s/g, '') + values.lastName.replace(/\s/g, '') + counter,
-                bibNumber : values.bibNumber = generateCarBibNumber(),
                 firstName : values.firstName,
                 lastName : values.lastName,
             }); 
@@ -69,7 +70,7 @@ let RaceCars = props => {
 
     const deleteCar = async docId => {
         await database.collection('raceCars').doc(docId).delete();
-        await getAllRaceCarsFromDB();
+        getAllRaceCarsFromDB();
         setToggleForm(false);
         setRaceCar(RACE_CAR_INITIAL_STATE)
     }
@@ -79,8 +80,11 @@ let RaceCars = props => {
         setToggleForm(true);
     }
 
-    const generateCarBibNumber = () => {
-        setCounter(oldCounter => oldCounter + 1);
+    const generateCarBibNumber = async () => {
+        setCounter(counter + 1);
+        database.collection('counter')
+        .doc("AznLkk4ak9pF0wtKJRk4")
+        .set({counter : counter})
         return counter;
     }
 
