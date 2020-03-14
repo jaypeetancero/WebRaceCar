@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import RaceCars from './components/raceCar/RaceCars';
-import RaceCarContainer from './components/raceCar/RaceCarContainer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/navigations/Header';
 import SideBar from './components/navigations/SideBar';
@@ -16,7 +15,7 @@ function App() {
       path : '/raceCars',
       component : RaceCars
     },{
-      path : '/WebRaceCar',
+      path : '/WebRaceCar/',
       component : RaceCars
     }
   ]
