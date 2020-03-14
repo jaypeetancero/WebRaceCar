@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+html, body, #root {
+    height: 100%;
+}
+.text-size-5{
+    font-size: 5rem;
+}
+.text-size-4{
+    font-size: 4rem;
+}
+.text-size-3{
+    font-size: 3rem;
+}
+.text-size-2{
+    font-size: 2rem;
+}
+.text-size-1-5{
+    font-size: 1.5rem;
+}
+.text-size-1{
+    font-size: 1rem;
+}
+.text-size-small{
+    font-size: 0.7rem;
+}
+.carousel-crop{
+    object-fit: none;
+    object-position: center;
+    max-height: 86vh;
+}
+.fixed-size-150px{
+    height: 150px !important;
+    width: 150px !important;   
+}
+.bg-opac-white{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.font-grotesque{
+    font-family: 'Darker Grotesque', sans-serif;
+}
+.font-work-sans{
+    font-family: 'Work Sans', sans-serif;
+}
+.font-open-sans{
+    font-family: 'Open Sans', sans-serif;
+}
+.font-montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+.bg-hover-grey :hover{
+    background-color: gray !important;
+}
+.bg-hover-grey{
+    background-color: white;    
+}
+.border-solid-thick{
+    border-style: solid;
+    border-width: 5px;
+}
+.border-solid-normal{
+    border-style: solid;
+    border-width: 2.5px;
+}
+.border-top-solid-normal{
+    border-top-style: solid;
+    border-width: 2.5px;
+}
+.margin-top-10{
+    margin-top: 10rem;
+}
+.padding-10{
+    padding: 10rem;
+}
+.padding-15{
+    padding: 15rem;
+}
+.top-7rem{
+    top: 7rem;
+}
+.dim{
+    filter: brightness(80%);
+}
+.disable-outline{
+    outline: none;
+}
+.custom-fixed-bottom{
+    position: absolute !important;
+    top: 100% !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+    margin-left: -15px !important;
+    margin-right: 15px !important;
+}
+.scrollable{
+    height:auto;
+    max-height:100%;
+    overflow:auto; 
+}
+.scrollable-item-list{
+    height:auto;
+    max-height:45rem;
+    overflow:auto;
+}
+.height-50{
+    height: 50px;
+}
+.height-100{
+    height: 40rem !important;
+}
+.height-250px{
+    height: 250px;
+}
+.height-95p{
+    height: 95% !important;
+}
+.height-65p{
+    height: 65% !important;
+}
+.top-33{
+    top: 33% !important;
+}
+.top-negative-5{
+    top: -5px !important;
+}
+.height-300px{
+    height: 300px;
+}
+.height-457px{
+    height: 457px;
+}
+.height-465px{
+    height: 465px;
+}
+.height-720px{
+    height: 720px;
+}
+.mt-25{
+    margin-top: 25%;
+}
+.mt-10{
+    margin-top: 10%;
+}
+.fixed-size{
+    height: 130px !important;
+    width: 130px !important;
+}
+.height-34rem{
+    height: 34rem !important;
+}
+.height-38rem{
+    height: 38rem !important;
+}
+.height-45rem{
+    height: 45rem !important;
+}
+.custom-modal-header{
+    padding: 1rem 1rem;
+}
+.modal-custom-width{
+    max-width: 1000px !important;
+    margin: 1.75rem auto !important;
+}
+.z-index-hide{
+    z-index: -5 !important;
+}
+.no-margin{
+    margin: 0px !important;
+}
+.no-padding{
+    padding: 0px !important;
+}
+.text-default-color{
+    color: #343434;
+}
+.text-F04B4B{
+    color: #F04B4B;
+}
+.text-418DC7{
+    color: #418DC7;
+}
+.bg-605ca8{
+    background-color: #605ca8;
+}
+.bg-001f3f{
+    background-color: #001f3f;
+}
+.bg-f5f5f5{
+    background-color: #f5f5f5;
+}
+.bg-418dc7{
+    background-color: #418dc7;
+}
+.bg-295d84{
+    background-color: #295d84;
+}
+.bg-1c415d{
+    background-color: #1c415d;
+}
+.bg-ffcA8e{
+    background-color: #ffcA8e;
+}
+.bg-4AAF4D{
+    background-color: #4AAF4D;
+}
+.bg-F04B4B{
+    background-color: #F04B4B;
+}
+.btn-F04B4B{
+    background-color: #F04B4B !important;
+    border-color: #F04B4B !important;
+    color: white !important;
+}
+.btn-4AAF4D{
+    background-color: #4AAF4D !important;
+    border-color: #4AAF4D !important;
+    color: white !important;
+}
+.btn-418dc7{
+    background-color: #418dc7 !important;
+    border-color: #418dc7 !important;
+    color: white !important;
+}
+.btn-295d84{
+    background-color: #295d84 !important;
+    border-color: #295d84 !important;
+    color: white !important;
+}
+.btn-1c415d{
+    background-color: #1c415d !important;
+    border-color: #1c415d !important;
+    color: white !important;
+}
+.no-border-radius{
+    border-radius: 0px;
+}
