@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4e9b04c58ce75a6508e966a5ff42caa2",
+    "revision": "5d53ee529e5c6edccaf41370e9018c70",
     "url": "/WebRaceCar/index.html"
   },
   {
-    "revision": "8d1160a71c2f868455ea",
+    "revision": "2d08fca054683149a0bd",
     "url": "/WebRaceCar/static/css/main.2d5b2c7d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WebRaceCar/static/js/2.7d6b067b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8d1160a71c2f868455ea",
-    "url": "/WebRaceCar/static/js/main.5cebdc0b.chunk.js"
+    "revision": "2d08fca054683149a0bd",
+    "url": "/WebRaceCar/static/js/main.61de65ec.chunk.js"
   },
   {
     "revision": "5fb99a962d2ddf86f111",
