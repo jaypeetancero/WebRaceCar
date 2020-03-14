@@ -54,7 +54,7 @@ let RaceCars = props => {
         
         if(values && !values.id){
             database.collection('raceCars').add({
-                id : (values.firstName + values.lastName + counter).replace(/\s/g, ''),
+                id : values.firstName.replace(/\s/g, '') + values.lastName.replace(/\s/g, '') + counter,
                 bibNumber : values.bibNumber = generateCarBibNumber(),
                 firstName : values.firstName,
                 lastName : values.lastName,
